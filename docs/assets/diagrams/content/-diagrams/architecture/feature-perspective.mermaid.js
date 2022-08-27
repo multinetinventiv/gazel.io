@@ -1,6 +1,6 @@
 
   import endent from 'endent';
-  
+
   export default {
       diagram : endent`
   %%{init: {'theme':'base'}}%%
