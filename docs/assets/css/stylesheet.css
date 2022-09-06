@@ -2955,3 +2955,7 @@ img {
 code {
   color: #db1c1b;
 }
+
+html {
+    scroll-padding-top: 70px;
+}
