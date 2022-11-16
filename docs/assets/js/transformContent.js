@@ -1,19 +1,25 @@
 import path from "path";
 
 function transformContent(element) {
-    //diagram
+    //diagrams
+    var value = "";
     element.body.children
-        .filter(f => f.tag == "p")
-        .forEach(element => {
-            const diagrams = element.children
-                .filter(ef => ef.tag == "img" && ef.props.src.endsWith(".mermaid"));
+        .filter(
+            f => f.tag == "div" && 
+            f.props.className[0] == "nuxt-content-highlight" && 
+            f.children[0].props.className.includes("language-mermaid")
+        )
+        .forEach(fr => {
+            value = getAllValue(fr);
 
-            if(diagrams.length > 0) {
-                diagrams.forEach(transformDiagram);
-                element.tag = "div";
-            }
+            var textElement = new Object();
+            textElement['type'] = "text";
+            textElement['value'] = value;
+            
+            fr.props.className = "mermaid";
+            fr.tag = "pre";
+            fr.children = [textElement];
         });
-
 
     //head
     element.body.children
@@ -89,10 +95,6 @@ function transformAlert(...params) {
     }
 }
 
-function transformDiagram(element) {
-    element.tag = "diagram";
-}
-
 function transformContentHead(...params) {
     var splitValue = params[1].value.split("{#");
     var withoutHastag = splitValue[1].replace("}", "");
@@ -113,6 +115,17 @@ function transformTable(element) {
 
 function transformImage(element) {
     element.props.src = path.join("/assets/images/content/", element.props.src);
+}
+
+function getAllValue(element) {
+    var value = "";
+    if(element.children){
+        element.children.forEach(fe => value += getAllValue(fe))
+    }else { 
+        return element.value;
+    }
+
+    return value
 }
 
 export default transformContent;
