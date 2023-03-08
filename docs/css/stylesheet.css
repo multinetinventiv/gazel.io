@@ -639,7 +639,7 @@ hr {
   transition: all 0.3s;
 }
 .idocs-navigation > .nav {
-  padding: 30px 0;
+  padding: 20px 0;
 }
 .idocs-navigation .nav .nav-item {
   position: relative;
@@ -2951,13 +2951,32 @@ img {
   max-width: 100%;
 }
 
-pre code {
-  color: #d4d4d4;
-}
 code {
-  color: #db1c1b;
+  background-color: #0000000D;
+  border-radius: 5px;
+  padding: 0.2em 0.4em;
+  color: #1a1b26;
 }
 
-html {
-    scroll-padding-top: 70px;
+pre code {
+  color: #d4d4d4;
+  padding: 0;
+}
+
+* {
+  scroll-margin-top: 70px;
+}
+
+.idocs-navigation .nav .nav {
+  margin: 0;
+}
+
+sup {
+  margin-left: 5px;
+}
+
+section.footnotes {
+  border-top: solid 1px lightgray;
+  padding-top: 10px;
+  font-size: smaller;
 }
