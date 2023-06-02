@@ -728,7 +728,7 @@ hr {
 .idocs-content section:first-child {
   padding-top: 1rem;
 }
-.idocs-content ol li, .idocs-content ul li {
+.idocs-content section ol li, .idocs-content section ul li {
   margin-top: 10px;
 }
 

@@ -1,0 +1,1 @@
+import{e as t,l as n,o as r,f as a,r as c,h as d}from"./entry.ef08e1a7.js";const i=["id"],p=t({__name:"ProseH3",props:{id:null},setup(e){const o=n("sectionId");return(s,l)=>(r(),a("h3",{id:`${d(o)}-${e.id}`},[c(s.$slots,"default")],8,i))}});export{p as default};

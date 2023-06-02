@@ -1,0 +1,1 @@
+import{_ as t,o,c as a,w as c,a as n,b as _,d as s}from"./entry.ef08e1a7.js";const r={},u=_("h1",null,"404",-1);function d(l,f){const e=s;return o(),a(e,null,{default:c(()=>[u,n(" Page Not Found ")]),_:1})}const p=t(r,[["render",d]]);export{p as default};
